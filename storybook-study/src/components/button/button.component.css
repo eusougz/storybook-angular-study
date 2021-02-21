@@ -1,0 +1,27 @@
+.btn {
+  outline: none;
+  border-radius: 2rem;
+  display: flex;
+  border: none;
+}
+
+.btn-label {
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem 1.5rem;
+}
+
+/* Input: type */
+.btn-filled {
+  background-color: #9feed1;
+}
+.btn-filled .btn-label {
+  color: #fcfcfc;
+}
+
+.btn-outlined {
+  background-color: #f2fcf8;
+  border: 0.1rem solid #9feed1;
+}
+.btn-outlined .btn-label {
+  color: #707070;
+}
