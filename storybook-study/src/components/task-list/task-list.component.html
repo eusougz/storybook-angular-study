@@ -1,0 +1,8 @@
+<div class="task-list-container">
+  <app-task
+    class="task"
+    *ngFor="let task of tasks"
+    [name]="task.name"
+    [duration]="task.duration"
+  ></app-task>
+</div>

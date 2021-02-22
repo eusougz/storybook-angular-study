@@ -22,6 +22,6 @@ const Template: Story<TaskComponent> = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  taskName: 'Lavar as vasilhas do almoço',
+  name: 'Lavar as vasilhas do almoço',
   duration: 45,
 };

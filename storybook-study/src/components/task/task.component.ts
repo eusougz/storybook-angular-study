@@ -10,7 +10,7 @@ export class TaskComponent implements OnInit {
    * Name of the task.
    */
   @Input()
-  taskName = '';
+  name = '';
 
   /**
    * Duration of the task.
