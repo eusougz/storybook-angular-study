@@ -152,7 +152,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".btn {\n  outline: none;\n  border-radius: 2rem;\n  display: flex;\n  border: none;\n  transition: all 300ms;\n}\n\n.btn:hover {\n  box-shadow: 0 0 10px #70707033;\n  transition: all 300ms;\n}\n\n.btn:active {\n  opacity: 0.65;\n  transition: all 300ms;\n}\n\n.btn-label {\n  font-family: \"Poppins\", sans-serif;\n  font-weight: 600;\n  padding: 0.5rem 1.5rem;\n}\n\n/* @Input prop: type */\n.btn-filled {\n  background-color: #9feed1;\n}\n.btn-filled .btn-label {\n  color: #fcfcfc;\n}\n\n.btn-outlined {\n  background-color: #f2fcf8;\n  border: 0.1rem solid #9feed1;\n}\n.btn-outlined .btn-label {\n  color: #707070;\n}\n",
+                    "data": ".btn {\n  outline: none;\n  border-radius: 2rem;\n  display: flex;\n  border: none;\n  transition: all 300ms;\n}\n\n.btn:hover {\n  box-shadow: var(--default-shadow);\n  transition: all 300ms;\n}\n\n.btn:active {\n  opacity: 0.65;\n  transition: all 300ms;\n}\n\n.btn-label {\n  font-family: \"Poppins\", sans-serif;\n  font-weight: 600;\n  padding: 0.5rem 1.5rem;\n}\n\n/* @Input prop: type */\n.btn-filled {\n  background-color: #9feed1;\n}\n.btn-filled .btn-label {\n  color: #fcfcfc;\n}\n\n.btn-outlined {\n  background-color: #f2fcf8;\n  border: 0.1rem solid #9feed1;\n}\n.btn-outlined .btn-label {\n  color: #707070;\n}\n",
                     "styleUrl": "./button.component.css"
                 }
             ],
@@ -181,7 +181,7 @@
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-9543e11d61a89e20d59b7cf3c6d4747d",
+            "id": "component-CheckboxComponent-969d2b11d3d0b055918babaf98b796e0",
             "file": "src/components/checkbox/checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -208,7 +208,7 @@
             "outputsClass": [
                 {
                     "name": "onCheck",
-                    "defaultValue": "new EventEmitter<boolean>()",
+                    "defaultValue": "new EventEmitter<{ checked: boolean }>()",
                     "line": 18,
                     "type": "EventEmitter"
                 }
@@ -249,11 +249,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-checkbox',\n  templateUrl: './checkbox.component.html',\n  styleUrls: ['./checkbox.component.css'],\n})\nexport class CheckboxComponent implements OnInit {\n  /**\n   * Text that appears next to the checkbox.\n   *\n   * Optional.\n   */\n  @Input()\n  text = '';\n\n  @Output()\n  onCheck = new EventEmitter<boolean>();\n\n  private checked = false;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  get isChecked() {\n    return this.checked;\n  }\n\n  toggleChecked(): void {\n    this.checked = !this.checked;\n    this.onCheck.emit(this.isChecked);\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-checkbox',\n  templateUrl: './checkbox.component.html',\n  styleUrls: ['./checkbox.component.css'],\n})\nexport class CheckboxComponent implements OnInit {\n  /**\n   * Text that appears next to the checkbox.\n   *\n   * Optional.\n   */\n  @Input()\n  text = '';\n\n  @Output()\n  onCheck = new EventEmitter<{ checked: boolean }>();\n\n  private checked = false;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  get isChecked() {\n    return this.checked;\n  }\n\n  toggleChecked(): void {\n    this.checked = !this.checked;\n    this.onCheck.emit({ checked: this.isChecked });\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".checkbox-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n\n.checkbox {\n  margin: 0;\n  width: 1.25rem;\n  height: 1.25rem;\n  border-radius: 50%;\n  border: 0.07rem solid #707070;\n  transition: all 200ms ease-in;\n}\n.checkbox.checked {\n  background-color: #ea5285;\n  border-color: #ea5285;\n  transition: all 250ms ease-out;\n}\n\n.checkbox-label {\n  font-family: \"Poppins\", sans-serif;\n  margin-left: 0.5rem;\n}\n",
+                    "data": ".checkbox-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  width: fit-content;\n}\n\n.checkbox {\n  margin: 0;\n  width: 1.25rem;\n  height: 1.25rem;\n  border-radius: 50%;\n  border: 0.07rem solid #707070;\n  transition: all 200ms ease-in;\n}\n.checkbox:hover {\n  box-shadow: var(--default-shadow);\n  transition: all 200ms;\n}\n.checkbox.checked {\n  background-color: #ea5285;\n  border-color: #ea5285;\n  transition: all 250ms ease-out;\n}\n\n.checkbox-label {\n  font-family: \"Poppins\", sans-serif;\n  color: #707070;\n  margin-left: 0.5rem;\n}\n",
                     "styleUrl": "./checkbox.component.css"
                 }
             ],
@@ -278,7 +278,76 @@
                     }
                 }
             },
-            "templateData": "<div class=\"checkbox-container\">\n  <div\n    class=\"checkbox\"\n    [class.checked]=\"isChecked\"\n    (click)=\"toggleChecked($event)\"\n  ></div>\n  <span class=\"checkbox-label\">Teste</span>\n</div>\n"
+            "templateData": "<div class=\"checkbox-container\">\n  <div\n    class=\"checkbox\"\n    [class.checked]=\"isChecked\"\n    (click)=\"toggleChecked($event)\"\n  ></div>\n  <span *ngIf=\"text\" class=\"checkbox-label\">{{ text }}</span>\n</div>\n"
+        },
+        {
+            "name": "TaskComponent",
+            "id": "component-TaskComponent-06708eeffdb98841eaf0151f936dc2e6",
+            "file": "src/components/task/task.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-task",
+            "styleUrls": [
+                "./task.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./task.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "duration",
+                    "description": "<p>Duration of the task.</p>\n",
+                    "line": 19,
+                    "type": "number | undefined"
+                },
+                {
+                    "name": "taskName",
+                    "defaultValue": "''",
+                    "description": "<p>Name of the task.</p>\n",
+                    "line": 13
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-task',\n  templateUrl: './task.component.html',\n  styleUrls: ['./task.component.css'],\n})\nexport class TaskComponent implements OnInit {\n  /**\n   * Name of the task.\n   */\n  @Input()\n  taskName = '';\n\n  /**\n   * Duration of the task.\n   */\n  @Input()\n  duration: number | undefined;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".task-container {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  padding: 1rem;\n  background-color: #fcfcfc;\n  border-radius: 0.5rem;\n  box-shadow: var(--default-shadow);\n}\n\n.task-text {\n  font-family: \"Poppins\", sans-serif;\n  color: #707070;\n}\n\n.text-container {\n  display: flex;\n  flex-direction: column;\n  margin-left: 1rem;\n}\n\n.text-small {\n  font-size: 12px;\n}\n",
+                    "styleUrl": "./task.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 19
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"task-container\">\n  <app-checkbox></app-checkbox>\n  <div class=\"text-container\">\n    <span class=\"task-text\">{{ taskName }}</span>\n    <span *ngIf=\"duration\" class=\"task-text text-small\"\n      >Duração: {{ duration }} min</span\n    >\n  </div>\n</div>\n"
         }
     ],
     "modules": [
@@ -367,6 +436,9 @@
                         },
                         {
                             "name": "CheckboxComponent"
+                        },
+                        {
+                            "name": "TaskComponent"
                         }
                     ]
                 },
@@ -416,6 +488,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/components/task/task.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -453,6 +533,14 @@
                 "file": "src/components/checkbox/checkbox.stories.ts",
                 "type": "Story<CheckboxComponent>",
                 "defaultValue": "(args) => ({\n  component: CheckboxComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/components/task/task.stories.ts",
+                "type": "Story<TaskComponent>",
+                "defaultValue": "(args) => ({\n  component: TaskComponent,\n  props: args,\n})"
             }
         ],
         "functions": [],
@@ -512,6 +600,24 @@
                     "defaultValue": "(args) => ({\n  component: CheckboxComponent,\n  props: args,\n})"
                 }
             ],
+            "src/components/task/task.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/components/task/task.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/components/task/task.stories.ts",
+                    "type": "Story<TaskComponent>",
+                    "defaultValue": "(args) => ({\n  component: TaskComponent,\n  props: args,\n})"
+                }
+            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -552,7 +658,7 @@
         ]
     },
     "coverage": {
-        "count": 3,
+        "count": 5,
         "status": "low",
         "files": [
             {
@@ -623,6 +729,35 @@
             },
             {
                 "filePath": "src/components/checkbox/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/task/task.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TaskComponent",
+                "coveragePercent": 40,
+                "coverageCount": "2/5",
+                "status": "medium"
+            },
+            {
+                "filePath": "src/components/task/task.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/task/task.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

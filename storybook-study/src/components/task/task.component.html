@@ -1,0 +1,9 @@
+<div class="task-container">
+  <app-checkbox></app-checkbox>
+  <div class="text-container">
+    <span class="task-text">{{ taskName }}</span>
+    <span *ngIf="duration" class="task-text text-small"
+      >Duração: {{ duration }} min</span
+    >
+  </div>
+</div>

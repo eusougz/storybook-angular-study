@@ -1,0 +1,24 @@
+.task-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fcfcfc;
+  border-radius: 0.5rem;
+  box-shadow: var(--default-shadow);
+}
+
+.task-text {
+  font-family: "Poppins", sans-serif;
+  color: #707070;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.text-small {
+  font-size: 12px;
+}
