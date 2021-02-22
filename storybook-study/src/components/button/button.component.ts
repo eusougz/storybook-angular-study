@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -13,10 +13,13 @@ export class ButtonComponent implements OnInit {
   label: string = '';
 
   /**
-   * Type influences the colors of background and borders.
+   * Influences the colors of background and borders.
    */
   @Input()
   type: 'filled' | 'outlined' = 'filled';
+
+  @Output()
+  onClick = new EventEmitter<Event>();
 
   constructor() {}
 
