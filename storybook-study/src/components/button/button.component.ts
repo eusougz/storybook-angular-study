@@ -14,6 +14,8 @@ export class ButtonComponent implements OnInit {
 
   /**
    * Influences the colors of background and borders.
+   *
+   * Optional.
    */
   @Input()
   type: 'filled' | 'outlined' = 'filled';

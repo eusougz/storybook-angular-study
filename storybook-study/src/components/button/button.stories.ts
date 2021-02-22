@@ -12,7 +12,7 @@ const Template: Story<ButtonComponent> = (args) => ({
   props: args,
 });
 
-export const ButtonStory = Template.bind({});
-ButtonStory.args = {
+export const Default = Template.bind({});
+Default.args = {
   label: 'Button',
 };
