@@ -14,7 +14,7 @@
   transition: all 200ms ease-in;
 }
 .checkbox:hover {
-  box-shadow: 1px 1px #70707033;
+  box-shadow: var(--default-shadow);
   transition: all 200ms;
 }
 .checkbox.checked {

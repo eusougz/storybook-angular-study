@@ -7,7 +7,7 @@
 }
 
 .btn:hover {
-  box-shadow: 1px 1px #70707033;
+  box-shadow: var(--default-shadow);
   transition: all 300ms;
 }
 
