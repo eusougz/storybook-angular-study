@@ -4,6 +4,7 @@ import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../button/button.component';
 import { TypographyComponent } from 'src/components/atoms/typography/typography.component';
+import { IconComponent } from 'src/components/atoms/icon/icon.component';
 
 export default {
   title: 'Design System/Molecule/Task',
@@ -16,6 +17,7 @@ export default {
         CheckboxComponent,
         ButtonComponent,
         TypographyComponent,
+        IconComponent,
       ],
       imports: [CommonModule],
     }),

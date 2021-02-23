@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { TaskListComponent } from './task-list.component';
 import { ButtonComponent } from '../../molecules/button/button.component';
 import { TypographyComponent } from 'src/components/atoms/typography/typography.component';
+import { IconComponent } from 'src/components/atoms/icon/icon.component';
 
 export default {
   title: 'Design System/Organism/Task List',
@@ -19,6 +20,7 @@ export default {
         CheckboxComponent,
         ButtonComponent,
         TypographyComponent,
+        IconComponent,
       ],
       imports: [CommonModule],
     }),

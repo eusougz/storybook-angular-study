@@ -11,7 +11,7 @@ export type Icon = typeof icons[number];
 })
 export class IconComponent implements OnInit {
   @Input()
-  icon: Icon = 'check';
+  icon: Icon | undefined;
 
   constructor() {}
 
@@ -19,9 +19,9 @@ export class IconComponent implements OnInit {
 
   get styles() {
     return {
-      height: '18px',
-      width: '18px',
-      backgroundColor: '#707070',
+      height: '1rem',
+      width: '1rem',
+      backgroundColor: '#fcfcfc',
       'mask-size': 'contain',
       'mask-position': 'center',
       'mask-repeat': 'no-repeat',

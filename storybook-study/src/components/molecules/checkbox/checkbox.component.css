@@ -12,6 +12,9 @@
   border-radius: 50%;
   border: 0.07rem solid #707070;
   transition: all 200ms ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .checkbox:hover {
   box-shadow: var(--default-shadow);
@@ -24,7 +27,5 @@
 }
 
 .checkbox-label {
-  font-family: "Poppins", sans-serif;
-  color: #707070;
   margin-left: 0.5rem;
 }
