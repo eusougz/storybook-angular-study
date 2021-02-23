@@ -14,6 +14,8 @@ export class TaskComponent implements OnInit {
 
   /**
    * Duration of the task.
+   *
+   * Optional.
    */
   @Input()
   duration: number | undefined;

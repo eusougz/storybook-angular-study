@@ -14,12 +14,13 @@ export class ButtonComponent implements OnInit {
 
   /**
    * Influences the colors of background and borders.
-   *
-   * Optional.
    */
   @Input()
   type: 'filled' | 'outlined' | 'default' = 'default';
 
+  /**
+   * Emits events when button is clicked.
+   */
   @Output()
   onClick = new EventEmitter<Event>();
 
@@ -29,5 +30,10 @@ export class ButtonComponent implements OnInit {
 
   get buttonClasses() {
     return ['btn', `btn-${this.type}`];
+  }
+
+  get typographyColor() {
+    if (this.type === 'filled') return 'white';
+    return 'black';
   }
 }

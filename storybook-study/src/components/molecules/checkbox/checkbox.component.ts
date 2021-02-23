@@ -14,6 +14,9 @@ export class CheckboxComponent implements OnInit {
   @Input()
   text = '';
 
+  /**
+   * Emits events when checked changes state.
+   */
   @Output()
   onCheck = new EventEmitter<{ checked: boolean }>();
 

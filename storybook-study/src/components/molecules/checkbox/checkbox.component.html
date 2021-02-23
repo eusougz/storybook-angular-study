@@ -4,5 +4,7 @@
     [class.checked]="isChecked"
     (click)="toggleChecked($event)"
   ></div>
-  <span *ngIf="text" class="checkbox-label">{{ text }}</span>
+  <span *ngIf="text" class="checkbox-label">
+    <app-typography [text]="text"></app-typography>
+  </span>
 </div>

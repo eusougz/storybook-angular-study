@@ -4,6 +4,7 @@ import { CheckboxComponent } from '../../molecules/checkbox/checkbox.component';
 import { CommonModule } from '@angular/common';
 import { TaskListComponent } from './task-list.component';
 import { ButtonComponent } from '../../molecules/button/button.component';
+import { TypographyComponent } from 'src/components/atoms/typography/typography.component';
 
 export default {
   title: 'Design System/Organism/Task List',
@@ -17,10 +18,14 @@ export default {
         TaskComponent,
         CheckboxComponent,
         ButtonComponent,
+        TypographyComponent,
       ],
       imports: [CommonModule],
     }),
   ],
+  argTypes: {
+    tasks: { table: { disable: true } },
+  },
 } as Meta;
 
 export const tasksData = [

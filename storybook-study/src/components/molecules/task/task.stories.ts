@@ -3,6 +3,7 @@ import { TaskComponent } from './task.component';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../button/button.component';
+import { TypographyComponent } from 'src/components/atoms/typography/typography.component';
 
 export default {
   title: 'Design System/Molecule/Task',
@@ -10,7 +11,12 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
   decorators: [
     moduleMetadata({
-      declarations: [TaskComponent, CheckboxComponent, ButtonComponent],
+      declarations: [
+        TaskComponent,
+        CheckboxComponent,
+        ButtonComponent,
+        TypographyComponent,
+      ],
       imports: [CommonModule],
     }),
   ],
