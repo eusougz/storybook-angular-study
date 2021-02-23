@@ -1,9 +1,9 @@
 import { Meta, Story, moduleMetadata } from '@storybook/angular';
-import { TaskComponent } from '../task/task.component';
-import { CheckboxComponent } from '../checkbox/checkbox.component';
+import { TaskComponent } from '../../molecules/task/task.component';
+import { CheckboxComponent } from '../../molecules/checkbox/checkbox.component';
 import { CommonModule } from '@angular/common';
 import { TaskListComponent } from './task-list.component';
-import { ButtonComponent } from '../button/button.component';
+import { ButtonComponent } from '../../molecules/button/button.component';
 
 export default {
   title: 'Design System/Organism/Task List',

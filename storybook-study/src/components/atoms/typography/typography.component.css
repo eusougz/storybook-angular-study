@@ -1,0 +1,26 @@
+.text {
+  font-family: "Poppins", sans-serif;
+}
+
+/* @Input prop: color */
+.text-black {
+  color: #707070;
+}
+.text-white {
+  color: #fcfcfc;
+}
+
+/* @Input prop: type */
+.text-h1 {
+  font-size: 18px;
+}
+.text-h2 {
+  font-size: 16px;
+}
+.text-label {
+  font-size: 14px;
+}
+.text-button-content {
+  font-size: 14px;
+  font-weight: 600;
+}
