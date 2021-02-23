@@ -34,6 +34,11 @@
   background-color: #f2fcf8;
   border: 0.1rem solid #9feed1;
 }
-.btn-outlined .btn-label {
+.btn-outlined .btn-label,
+.btn-default .btn-label {
   color: #707070;
+}
+
+.btn-default {
+  background: none;
 }

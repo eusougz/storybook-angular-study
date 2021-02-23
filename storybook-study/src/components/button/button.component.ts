@@ -18,7 +18,7 @@ export class ButtonComponent implements OnInit {
    * Optional.
    */
   @Input()
-  type: 'filled' | 'outlined' = 'filled';
+  type: 'filled' | 'outlined' | 'default' = 'default';
 
   @Output()
   onClick = new EventEmitter<Event>();

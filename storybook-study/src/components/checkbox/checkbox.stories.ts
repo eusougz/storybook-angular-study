@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/angular';
 import { CheckboxComponent } from './checkbox.component';
 
 export default {
-  title: 'Design System/Atoms/Checkbox',
+  title: 'Design System/Molecule/Checkbox',
   component: CheckboxComponent,
   parameters: { actions: { argTypesRegex: '^on.*' } },
 } as Meta;

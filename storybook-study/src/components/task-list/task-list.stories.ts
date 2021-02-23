@@ -3,15 +3,21 @@ import { TaskComponent } from '../task/task.component';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { CommonModule } from '@angular/common';
 import { TaskListComponent } from './task-list.component';
+import { ButtonComponent } from '../button/button.component';
 
 export default {
-  title: 'Design System/Composed/Task List',
+  title: 'Design System/Organism/Task List',
   component: TaskListComponent,
   parameters: { actions: { argTypesRegex: '^on.*' } },
   excludeStories: /.*Data$/,
   decorators: [
     moduleMetadata({
-      declarations: [TaskListComponent, TaskComponent, CheckboxComponent],
+      declarations: [
+        TaskListComponent,
+        TaskComponent,
+        CheckboxComponent,
+        ButtonComponent,
+      ],
       imports: [CommonModule],
     }),
   ],

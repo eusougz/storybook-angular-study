@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/angular';
 import { ButtonComponent } from './button.component';
 
 export default {
-  title: 'Design System/Atoms/Button',
+  title: 'Design System/Molecule/Button',
   component: ButtonComponent,
   parameters: { actions: { argTypesRegex: '^on.*' } },
 } as Meta;
