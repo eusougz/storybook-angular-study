@@ -5,6 +5,7 @@ import { CheckboxComponent } from './molecules/checkbox/checkbox.component';
 import { TaskComponent } from './molecules/task/task.component';
 import { TaskListComponent } from './organisms/task-list/task-list.component';
 import { TypographyComponent } from './atoms/typography/typography.component';
+import { IconComponent } from './atoms/icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { TypographyComponent } from './atoms/typography/typography.component';
     TaskComponent,
     TaskListComponent,
     TypographyComponent,
+    IconComponent,
   ],
   imports: [CommonModule],
 })
