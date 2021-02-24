@@ -17,5 +17,13 @@ import { IconComponent } from './atoms/icon/icon.component';
     IconComponent,
   ],
   imports: [CommonModule],
+  exports: [
+    ButtonComponent,
+    CheckboxComponent,
+    TaskComponent,
+    TaskListComponent,
+    TypographyComponent,
+    IconComponent,
+  ],
 })
 export class ComponentsModule {}

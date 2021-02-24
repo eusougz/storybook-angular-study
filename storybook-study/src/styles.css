@@ -9,3 +9,7 @@
 :root {
   --default-shadow: 1px 1px #70707033;
 }
+
+body {
+  background-color: #f4f4f4;
+}

@@ -1,9 +1,5 @@
 <div class="checkbox-container">
-  <div
-    class="checkbox"
-    [class.checked]="isChecked"
-    (click)="toggleChecked($event)"
-  >
+  <div class="checkbox" [class.checked]="isChecked" (click)="toggleChecked()">
     <app-icon *ngIf="isChecked" icon="check"></app-icon>
   </div>
   <span *ngIf="text" class="checkbox-label">

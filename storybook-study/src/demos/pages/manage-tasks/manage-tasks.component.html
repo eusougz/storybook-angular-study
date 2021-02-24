@@ -1,0 +1,13 @@
+<div class="page">
+  <div class="titles-container">
+    <app-typography type="h1" text="Gerencias tarefas"></app-typography>
+    <app-typography type="h2" text="Minhas tarefas"></app-typography>
+    <app-button
+      label="Criar nova tarefa"
+      type="filled"
+      class="btn-new-task"
+    ></app-button>
+  </div>
+
+  <app-task-list [tasks]="fakeTasksData" class="tasks-list"></app-task-list>
+</div>
